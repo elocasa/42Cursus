@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 16:59:45 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/08 17:18:34 by dcerezo-         ###   ########.fr       */
+/*   Created: 2025/04/10 10:08:50 by marvin            #+#    #+#             */
+/*   Updated: 2025/04/10 10:08:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 #include <unistd.h>
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (size--)
-	{
-		dest[size] = src[size];
+	j = 0;
+	while (dest[i] != '\0')
 		i++;
+	while (size > 0)
+	{
 	}
 	return (i);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char	*src;
-	char	dest[] = "";
+	char src[] = "adios";
+	char dest[] = "HOla";
 
-	src = "hola";
-	// ft_strlcpy(dest, src, 4);
-	//printf("%zu", ft_strlcpy(dest, src, sizeof(src)));
-	// printf("%s", dest);
-}*/
+	ft_strlcat(dest, src, 4);
+}
