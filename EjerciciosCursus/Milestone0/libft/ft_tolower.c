@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 11:07:16 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/15 11:38:50 by dcerezo-         ###   ########.fr       */
+/*   Created: 2025/04/15 11:28:03 by dcerezo-          #+#    #+#             */
+/*   Updated: 2025/04/15 11:39:02 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <ctype.h>
 //#include <stdio.h>
-//#include <unistd.h>
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
-	if (c <= 'z' && c >= 'a')
-		c -= 32;
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
 	return (c);
 }
 
 /*int	main(void)
 {
-	char prueba = 'a';
+	char prueba = 'A';
 
-	prueba = ft_toupper(prueba);
+	prueba = ft_tolower(prueba);
 	printf("%c", prueba);
 }*/

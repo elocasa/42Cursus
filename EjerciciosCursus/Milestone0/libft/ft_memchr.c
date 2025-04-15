@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 11:07:16 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/15 11:38:50 by dcerezo-         ###   ########.fr       */
+/*   Created: 2025/04/15 13:30:50 by dcerezo-          #+#    #+#             */
+/*   Updated: 2025/04/15 14:08:13 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <ctype.h>
-//#include <stdio.h>
-//#include <unistd.h>
+#include <stdio.h>
+#include <unistd.h>
 
-int	ft_toupper(int c)
+char	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c <= 'z' && c >= 'a')
-		c -= 32;
-	return (c);
+	while (n--)
+	{
+		if ((char *)s == c)
+			return ((unsigned char)s);
+		else
+			s++;
+	}
+	return (NULL);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char prueba = 'a';
-
-	prueba = ft_toupper(prueba);
-	printf("%c", prueba);
-}*/
+	printf("%s", ft_memchr("hola", 'o', 3));
+}
