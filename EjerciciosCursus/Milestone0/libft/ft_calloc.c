@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 12:57:03 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/18 12:57:03 by marvin           ###   ########.fr       */
+/*   Created: 2025/04/18 15:02:13 by marvin            #+#    #+#             */
+/*   Updated: 2025/04/18 15:02:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
-int	ft_atoi(const char *str)
+void	*ft_calloc(size_t number, size_t size)
 {
-	int	result;
-	int	sign;
+	size_t			i;
+	size_t			total_size;
+	unsigned char	*ptr;
 
-	result = 0;
-	sign = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v'
-		|| *str == '\f' || *str == '\r')
-		str++;
-	if (*str == '-' || *str == '+')
+	total_size = number * size;
+	ptr = (unsigned char *)malloc(total_size);
+	if (!ptr)
+		return ((void *)0);
+	i = 0;
+	while (i < number)
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
+		ptr[i] = 0;
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		result = result * 10 + (*str - '0');
-		str++;
-	}
-	return (result * sign);
+	return ((void *)ptr);
 }
 
 // int	main(void)
 // {
-// 	printf("%d", ft_atoi("321"));
+// 	printf("%p", ft_calloc(5, 6));
 // }
