@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   memcmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 13:30:50 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/15 14:08:13 by dcerezo-         ###   ########.fr       */
+/*   Created: 2025/04/18 12:22:57 by marvin            #+#    #+#             */
+/*   Updated: 2025/04/18 12:22:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 #include <unistd.h>
 
-char	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	unsigned char	*str;
-	size_t			i;
+	size_t	i;
 
 	i = 0;
-	str = (unsigned char *)s;
 	while (i < n)
 	{
-		if (str[i] == c)
-			return ((void *)(str + i));
+		if (((const char *)str1)[i] != ((const char *)str2)[i])
+			return (((const char *)str1)[i] - ((const char *)str2)[i]);
 		i++;
 	}
-	return ((void *)0);
+	return (0);
 }
 
 // int	main(void)
 // {
-// 	printf("%p", ft_memchr("hola", 'o', 3));
+// 	printf("%d", ft_memcmp("Holo", "Hola", 4));
 // }
