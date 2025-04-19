@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 #include <unistd.h>
 
 void	ft_bzero(void *s, size_t n)
@@ -21,9 +21,9 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-int	main(void)
-{
-	char s1[] = "123456798";
-	ft_bzero(s1, 5);
-	printf("%s", s1);
-}
+// int	main(void)
+// {
+// 	char s1[] = "123456798";
+// 	ft_bzero(s1, 5);
+// 	printf("%s", s1 + 5);
+// }

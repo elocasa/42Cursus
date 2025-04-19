@@ -1,41 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 10:08:50 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/10 10:08:50 by marvin           ###   ########.fr       */
+/*   Created: 2025/04/19 12:26:00 by marvin            #+#    #+#             */
+/*   Updated: 2025/04/19 12:26:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
+#include <stdlib.h>
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	j = 0;
-	while (*dest)
+	while (s[i])
 		i++;
-	while (size > 0)
+	return (i);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*sub;
+	size_t	i;
+	size_t	s_len;
+
+	i = 0;
+	sub = (char *)malloc(sizeof(char) * (len + 1));
+	if (!sub)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (len > s_len - start)
+		len = s_len - start;
+	while (i < len)
 	{
-		dest[i + j] = src[j];
-		j++;
-		size--;
+		sub[i] = s[start + i];
+		i++;
 	}
-	dest[i + j + 1] = '\0';
-	return (i + j);
+	sub[i] = '\0';
+	return (sub);
 }
 
 int	main(void)
 {
-	char src[] = "adios";
-	char dest[] = "HOla";
-
-	printf("%d", ft_strlcat(dest, src, 4));
+	printf("%s", ft_substr("hola como estas", 1, 6));
 }
