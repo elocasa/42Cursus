@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 12:57:03 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/18 12:57:03 by marvin           ###   ########.fr       */
+/*   Created: 2025/04/19 13:39:36 by marvin            #+#    #+#             */
+/*   Updated: 2025/04/19 13:39:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include <stdio.h>
 #include "libft.h"
 
-// #include <stdio.h>
-
-int	ft_atoi(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	result;
-	int	sign;
+	size_t	i;
+	size_t	j;
+	char	*result;
 
-	result = 0;
-	sign = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v'
-		|| *str == '\f' || *str == '\r')
-		str++;
-	if (*str == '-' || *str == '+')
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	result = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	while (s1[i])
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
+		result[i] = s1[i];
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (s2[j])
 	{
-		result = result * 10 + (*str - '0');
-		str++;
+		result[i + j] = s2[j];
+		j++;
 	}
-	return (result * sign);
+	result[i + j] = '\0';
+	return (result);
 }
 
 // int	main(void)
 // {
-// 	printf("%d", ft_atoi("321"));
+// 	printf("%s", ft_strjoin("hola", " adios"));
 // }

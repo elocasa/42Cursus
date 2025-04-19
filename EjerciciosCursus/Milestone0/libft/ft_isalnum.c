@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
+// #include <stdio.h>
 //#include <ctype.h>
-//#include <unistd.h>
+#include "libft.h"
 
 int	ft_isalnum(char c)
 {
