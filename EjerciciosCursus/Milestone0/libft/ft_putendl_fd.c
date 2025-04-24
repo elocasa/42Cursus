@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 10:08:50 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/10 10:08:50 by marvin           ###   ########.fr       */
+/*   Created: 2025/04/24 13:33:51 by marvin            #+#    #+#             */
+/*   Updated: 2025/04/24 13:33:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (*dest)
-		i++;
-	while (size > 0)
+	if (fd < 0 || !s)
+		return ;
+	while (*s)
 	{
-		dest[i + j] = src[j];
-		j++;
-		size--;
+		write(fd, s, 1);
+		s++;
 	}
-	dest[i + j + 1] = '\0';
-	return (i + j);
-}
-
-int	main(void)
-{
-	char src[] = "adios";
-	char dest[] = "HOla";
-
-	printf("%d", ft_strlcat(dest, src, 4));
+	write(fd, "\n", 1);
 }

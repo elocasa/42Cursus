@@ -10,32 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	int	j;
+	const char	*last_occ;
 
-	i = 0;
-	j = 0;
-	while (*s != '\0')
+	last_occ = NULL;
+	while (*s)
 	{
-		if (s[i] == c)
-		{
-			j = i;
-			i++;
-		}
-		else
-		{
-			i++;
-		}
+		if (*s == (char)c)
+			last_occ = s;
+		s++;
 	}
-	return ((char *)s);
+	if ((char)c == '\0')
+		return ((char *)s);
+	return ((char *)last_occ);
 }
 
-int	main(void)
-{
-	printf("%s", ft_strrchr("hola como estas", 'o'));
-}
+// int	main(void)
+// {
+// 	char str[] = "Hello, World!";
+// 	char *result;
+
+// 	result = ft_strrchr(str, 'o');
+// 	if (result)
+// 		printf("Found: %s\n", result);
+// 	else
+// 		printf("Not found\n");
+// 	return (0);
+// }
