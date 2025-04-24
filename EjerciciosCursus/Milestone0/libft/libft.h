@@ -6,7 +6,7 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 14:23:48 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/24 16:55:27 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:48:58 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ char	*ft_itoa(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-int		ft_isalpha(unsigned int c);
-int		ft_print(char c);
+int		ft_isalpha(int c);
+int		ft_isprint(char c);
+char	*ft_strrchr(const char *s, int c);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
 #endif
