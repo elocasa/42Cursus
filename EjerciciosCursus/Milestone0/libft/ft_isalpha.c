@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 11:11:39 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/24 16:53:35 by dcerezo-         ###   ########.fr       */
+/*   Created: 2025/04/24 16:48:50 by dcerezo-          #+#    #+#             */
+/*   Updated: 2025/04/24 16:52:14 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_print(char c)
+int	ft_isalpha(unsigned int c)
 {
-	if ((c < 91 && c > 64) || (c < 123 && c > 96))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
-	else
-		return (0);
+	return (0);
 }
-
-/*int main()
-{
-	printf("%d", ft_isalpha('a'));
-	printf("%d", isalpha('a'));
-}*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 14:23:48 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/19 14:23:48 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/24 16:55:27 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 char	*ft_memchr(const void *s, int c, size_t n);
-int		ft_isalpha(char c);
 int		ft_isdigit(char c);
-int		ft_isascii(char c);
+int		ft_isascii(int c);
 int		ft_isalnum(char c);
 void	*ft_calloc(size_t number, size_t size);
 void	ft_bzero(void *s, size_t n);
@@ -47,4 +46,6 @@ char	*ft_itoa(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_isalpha(unsigned int c);
+int		ft_print(char c);
 #endif

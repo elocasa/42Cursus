@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 15:17:01 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/18 15:17:01 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/24 16:38:38 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *str)
 {
-	size_t i;
-	char *dup;
+	size_t	i;
+	char	*dup;
 
 	i = 0;
 	while (str[i])
