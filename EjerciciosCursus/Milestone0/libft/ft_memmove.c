@@ -6,11 +6,10 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:16:59 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/08 17:06:01 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:47:42 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)

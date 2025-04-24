@@ -6,11 +6,10 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:40:01 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/15 14:08:34 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:47:53 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strchr(const char *s, size_t c)

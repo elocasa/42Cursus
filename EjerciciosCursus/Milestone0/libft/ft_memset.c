@@ -6,11 +6,10 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:51:44 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/08 16:02:08 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:47:45 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 void	*ft_memset(void *dest, int c, size_t n)

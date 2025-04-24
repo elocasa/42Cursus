@@ -6,11 +6,10 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:32:20 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/08 16:52:17 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:47:03 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

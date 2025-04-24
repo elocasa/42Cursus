@@ -6,11 +6,10 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 12:20:02 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/15 13:29:19 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:48:14 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

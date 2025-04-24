@@ -6,12 +6,10 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:12:10 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/08 15:23:42 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:47:17 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <ctype.h>
-//#include <stdio.h>
 #include "libft.h"
 
 int	ft_isascii(char c)

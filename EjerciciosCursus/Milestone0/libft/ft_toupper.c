@@ -6,13 +6,11 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:07:16 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/15 11:38:50 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:48:51 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <ctype.h>
-//#include <stdio.h>
-//#include <unistd.h>
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

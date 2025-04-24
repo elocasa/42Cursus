@@ -6,11 +6,10 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 13:30:50 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/15 14:08:13 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:47:31 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
 #include "libft.h"
 
 char	*ft_memchr(const void *s, int c, size_t n)

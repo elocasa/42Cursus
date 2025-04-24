@@ -6,11 +6,10 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:59:45 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/08 17:18:34 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:48:07 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
