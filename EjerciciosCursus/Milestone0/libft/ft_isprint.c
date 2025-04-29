@@ -6,18 +6,15 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:11:39 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/24 17:41:27 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:43:42 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(unsigned int c)
 {
-	if ((c < 91 && c > 64) || (c < 123 && c > 96))
-		return (1);
-	else
-		return (0);
+	return (c >= 32 && c <= 126);
 }
 
 /*int main()

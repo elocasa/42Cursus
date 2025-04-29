@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:52:27 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/24 11:52:27 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/29 13:34:27 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_intlen(int num)
 {
 	int	len;
 
+	len = 0;
 	if (num <= 0)
 		len = 1;
 	while (num)

@@ -6,7 +6,7 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:36:04 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/24 15:48:17 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:40:33 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *big, const char *small, size_t n)
 	size_t	j;
 
 	i = 0;
+	if (*small == '\0')
+		return ((char *)big);
 	while (big[i] && i < n)
 	{
 		j = 0;

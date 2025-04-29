@@ -6,18 +6,17 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:40:51 by dcerezo-          #+#    #+#             */
-/*   Updated: 2025/04/24 15:47:21 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:26:30 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char c)
+int	ft_isdigit(unsigned int c)
 {
-	if (c > 47 && c < 58)
+	if (c >= '0' && c <= '9')
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 /*int main()
