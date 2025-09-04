@@ -1,15 +1,4 @@
 {
-  "files.associations": {
-    "random": "c",
-    "stdarg.h": "c",
-    "stdlib.h": "c",
-    "cstdlib": "c",
-    "ft_printf.h": "c",
-    "stdio.h": "c",
-    "unistd.h": "c"
-  },
-  "C_Cpp.dimInactiveRegions": false,
-  "C_Cpp.errorSquiggles": "disabled",
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
   "C_Cpp_Runner.debuggerPath": "gdb",

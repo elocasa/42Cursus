@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diego <diego@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 15:53:11 by diego             #+#    #+#             */
-/*   Updated: 2025/06/03 17:51:36 by diego            ###   ########.fr       */
+/*   Updated: 2025/06/12 16:30:55 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr(int n)
 {
-	int		count_char;
+	int	count_char;
 
 	count_char = 0;
 	if (n == -2147483648)
@@ -32,7 +32,7 @@ int	ft_putnbr(int n)
 
 int	ft_putnbr_unsigned(unsigned int n)
 {
-	int		count_char;
+	int	count_char;
 
 	count_char = 0;
 	if (n >= 10)

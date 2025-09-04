@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diego <diego@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 15:55:09 by diego             #+#    #+#             */
-/*   Updated: 2025/06/03 18:07:03 by diego            ###   ########.fr       */
+/*   Updated: 2025/06/12 16:31:28 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
-# include <unistd.h>
+#include "ft_printf.h"
 
 int	ft_putnbr_base(unsigned long nbr, int upper)
 {
