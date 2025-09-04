@@ -3,31 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diego <diego@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:59:37 by diego             #+#    #+#             */
-/*   Updated: 2025/09/03 15:16:38 by diego            ###   ########.fr       */
+/*   Updated: 2025/09/04 15:58:01 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
 #include <signal.h>
 #include <unistd.h>
-#include "libft/libft.h"
 
-static void action(int sig, siginfo_t *info, void *context)
+static void	action(int sig, siginfo_t *info, void *context)
 {
-	static int	i = 0;
-	static pid_t	client_pid = 0;
-	static unsigned	char c = 0;
+	static int				i = 0;
+	static pid_t			client_pid = 0;
+	static unsigned char	c = 0;
 
 	(void)context;
-	if(!client_pid)
+	if (!client_pid)
 		client_pid = info->si_pid;
-	c |= (sig == SIGUSR2);
-	if(++i == 8)
+	c <<= 1;
+	if (sig == SIGUSR2)
+		c |= 1;
+	if (++i == 8)
 	{
 		i = 0;
-		if(!c)
+		if (!c)
 		{
 			kill(client_pid, SIGUSR2);
 			client_pid = 0;
@@ -37,11 +39,9 @@ static void action(int sig, siginfo_t *info, void *context)
 		c = 0;
 		kill(client_pid, SIGUSR1);
 	}
-	else
-		c <<= 1;
 }
 
-int main(void)
+int	main(void)
 {
 	struct sigaction	s_sigaction;
 
@@ -52,7 +52,7 @@ int main(void)
 	s_sigaction.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &s_sigaction, 0);
 	sigaction(SIGUSR2, &s_sigaction, 0);
-	while(1)
+	while (1)
 		pause();
 	return (0);
 }
