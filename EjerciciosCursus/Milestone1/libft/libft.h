@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diego <diego@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 14:23:48 by marvin            #+#    #+#             */
-/*   Updated: 2025/09/03 15:27:49 by diego            ###   ########.fr       */
+/*   Updated: 2025/09/08 15:31:14 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-
 char	*ft_strtrim(char const *s1, char const *set);
 size_t	ft_strlen(const char *s);
 int		ft_toupper(int c);

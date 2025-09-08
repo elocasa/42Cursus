@@ -6,19 +6,20 @@
 /*   By: dcerezo- <dcerezo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:32:16 by diego             #+#    #+#             */
-/*   Updated: 2025/09/04 15:58:12 by dcerezo-         ###   ########.fr       */
+/*   Updated: 2025/09/08 15:47:06 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "minitalk.h"
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 static void	action(int sig)
 {
-	static int	received = 0;
+	static int	received;
 
+	received = 0;
 	if (sig == SIGUSR1)
 		++received;
 	else
@@ -43,12 +44,10 @@ static void	mt_kill(int pid, char *str)
 		while (i--)
 		{
 			if (c >> i & 1)
-			{
 				kill(pid, SIGUSR2);
-			}
 			else
 				kill(pid, SIGUSR1);
-			usleep(1000);
+			usleep(500);
 		}
 		j++;
 	}
@@ -56,7 +55,7 @@ static void	mt_kill(int pid, char *str)
 	while (i--)
 	{
 		kill(pid, SIGUSR1);
-		usleep(1000);
+		usleep(500);
 	}
 }
 
