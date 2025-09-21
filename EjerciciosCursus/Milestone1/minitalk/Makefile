@@ -1,8 +1,8 @@
 NAME_SERVER = server
 NAME_CLIENT = client
 
-SRCS_SERVER = server.c minitalk.h
-SRCS_CLIENT = client.c minitalk.h
+SRCS_SERVER = server.c utils.c
+SRCS_CLIENT = client.c utils.c
 
 OBJS_SERVER = $(SRCS_SERVER:.c=.o)
 OBJS_CLIENT = $(SRCS_CLIENT:.c=.o)
