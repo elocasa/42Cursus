@@ -13,19 +13,19 @@ CFLAGS = -Wall -Wextra -Werror -I.
 all: $(NAME_SERVER) $(NAME_CLIENT)
 
 $(NAME_SERVER): $(OBJS_SERVER)
-    $(CC) $(CFLAGS)	-o $@ $(OBJS_SERVER)
+	$(CC) $(CFLAGS) -o $@ $(OBJS_SERVER)
 
 $(NAME_CLIENT): $(OBJS_CLIENT)
-    $(CC) $(CFLAGS)	-o $@ $(OBJS_CLIENT)
+	$(CC) $(CFLAGS) -o $@ $(OBJS_CLIENT)
 
 %.o: %.c minitalk.h
-    $(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-    rm -f *.o
+	rm -f *.o
 
 fclean: clean
-    rm -f $(NAME_SERVER) $(NAME_CLIENT)
+	rm -f $(NAME_SERVER) $(NAME_CLIENT)
 
 re: fclean all
 

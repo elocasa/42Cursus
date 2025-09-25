@@ -14,6 +14,8 @@
 #include <signal.h>
 #include <unistd.h>
 
+struct mt_server mt_server = {0, 0, 0};
+
 static void	mt_kill_server(unsigned char c, pid_t client_pid)
 {
 	if (!c)
