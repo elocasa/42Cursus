@@ -9,17 +9,12 @@
 /*   Updated: 2025/09/08 15:47:06 by dcerezo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "minitalk.h"
-#include <signal.h>
-#include <stdlib.h>
-#include <unistd.h>
+
+static int	received = 0;
 
 static void	action(int sig)
 {
-	static int	received;
-
-	received = 0;
 	if (sig == SIGUSR1)
 		++received;
 	else
@@ -47,7 +42,7 @@ static void	mt_kill(int pid, char *str)
 				kill(pid, SIGUSR2);
 			else
 				kill(pid, SIGUSR1);
-			usleep(500);
+ 			usleep(500);
 		}
 		j++;
 	}

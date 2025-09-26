@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "minitalk.h"
-#include <signal.h>
-#include <unistd.h>
 
 struct mt_server mt_server = {0, 0, 0};
 
@@ -21,7 +19,7 @@ static void	mt_kill_server(unsigned char c, pid_t client_pid)
 	if (!c)
 	{
 		kill(client_pid, SIGUSR2);
-		client_pid = 0;
+ 		mt_server.client_pid = 0;
 		return ;
 	}
 	ft_putchar_fd(c, 1);
