@@ -11,15 +11,15 @@
 /* ************************************************************************** */
 #include "minitalk.h"
 
-static int	received = 0;
+static int	g_received = 0;
 
 static void	action(int sig)
 {
 	if (sig == SIGUSR1)
-		++received;
+		++g_received;
 	else
 	{
-		ft_putnbr_fd(received, 1);
+		ft_putnbr_fd(g_received, 1);
 		ft_putchar_fd('\n', 1);
 		exit(0);
 	}
@@ -42,7 +42,7 @@ static void	mt_kill(int pid, char *str)
 				kill(pid, SIGUSR2);
 			else
 				kill(pid, SIGUSR1);
- 			usleep(500);
+			usleep(500);
 		}
 		j++;
 	}

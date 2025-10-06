@@ -14,17 +14,17 @@
 # define MINITALK_H
 # include <unistd.h>
 # include <signal.h>
-#include <stdlib.h>
+# include <stdlib.h>
 # include <sys/types.h>
 
-extern struct mt_server
+typedef struct s_mt_server
 {
-	int i;
-	pid_t client_pid;
-	unsigned char c;
-} mt_server;
+	int				i;
+	unsigned char	c;
+	pid_t			client_pid;
+}	t_mt_server;
 
-int	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);

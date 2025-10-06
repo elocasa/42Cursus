@@ -12,14 +12,15 @@
 
 #include "minitalk.h"
 
-struct mt_server mt_server = {0, 0, 0};
+t_mt_server	g_mt_server;
 
 static void	mt_kill_server(unsigned char c, pid_t client_pid)
 {
 	if (!c)
 	{
+		ft_putchar_fd('\n', 1);
 		kill(client_pid, SIGUSR2);
- 		mt_server.client_pid = 0;
+		g_mt_server.client_pid = 0;
 		return ;
 	}
 	ft_putchar_fd(c, 1);
@@ -30,22 +31,22 @@ static void	mt_kill_server(unsigned char c, pid_t client_pid)
 static void	action(int sig, siginfo_t *info, void *context)
 {
 	(void)context;
-	if (!mt_server.client_pid)
-		mt_server.client_pid = info->si_pid;
-	mt_server.c <<= 1;
+	if (!g_mt_server.client_pid)
+		g_mt_server.client_pid = info->si_pid;
+	g_mt_server.c <<= 1;
 	if (sig == SIGUSR2)
-		mt_server.c |= 1;
-	if (++mt_server.i == 8)
+		g_mt_server.c |= 1;
+	if (++g_mt_server.i == 8)
 	{
-		mt_server.i = 0;
-		mt_kill_server(mt_server.c, mt_server.client_pid);
+		g_mt_server.i = 0;
+		mt_kill_server(g_mt_server.c, g_mt_server.client_pid);
 	}
 }
 
 int	main(void)
 {
 	struct sigaction	s_sigaction;
-	
+
 	ft_putstr_fd("Server PID: ", 1);
 	ft_putnbr_fd(getpid(), 1);
 	ft_putchar_fd('\n', 1);

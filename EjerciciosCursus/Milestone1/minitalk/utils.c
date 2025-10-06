@@ -32,7 +32,6 @@ void	ft_putnbr_fd(int n, int fd)
 	write(fd, &c, 1);
 }
 
-
 void	ft_putchar_fd(char c, int fd)
 {
 	if (fd < 0)
@@ -49,7 +48,6 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
 
 int	ft_atoi(const char *str)
 {
