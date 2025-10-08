@@ -12,6 +12,12 @@
 
 #include "utils.h"
 #include "mlx.h"
+void    change_fractal(int key, t_engine *engine)
+{
+    reset_engine(engine, MANDELBROT);
+    if (key == KEY_TWO)
+        engine->fractal.type = JULIA;
+}
 
 void    set_fractal_type(t_engine *engine, char *str)
 {

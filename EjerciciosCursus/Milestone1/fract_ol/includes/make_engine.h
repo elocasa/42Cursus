@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   make_engine.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diego <diego@student.42.fr>                #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-08 14:15:09 by diego             #+#    #+#             */
-/*   Updated: 2025-10-08 14:15:09 by diego            ###   ########.fr       */
+/*   Created: 2025-10-08 17:16:55 by diego             #+#    #+#             */
+/*   Updated: 2025-10-08 17:16:55 by diego            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
-#include "render.h"
-#include "events.h"
-#include "utils.h"
+#ifndef MAKE_ENGINE_H
+#define MAKE_ENGINE_H
 
-int main(int ac, char **av)
-{
-    t_engine    engine;
-    if(ac != 2)
-        show_help();
-    init_engine(&engine, av[1]);
-    draw_fractal(&engine);
-    mlx_key_hook(engine.window, on_key_hook_event, &engine);
-}
+# include "fractal.h"
+
+void    init_engine(t_engine *engine, char *arg);
+void    reset_engine(t_engine *engine, char *fractal_type);
+void    set_fractal_type(t_engine *engine, char *str);
+
+#endif

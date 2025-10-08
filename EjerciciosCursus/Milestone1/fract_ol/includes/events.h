@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   events.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diego <diego@student.42.fr>                #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-08 14:15:09 by diego             #+#    #+#             */
-/*   Updated: 2025-10-08 14:15:09 by diego            ###   ########.fr       */
+/*   Created: 2025-10-08 17:13:47 by diego             #+#    #+#             */
+/*   Updated: 2025-10-08 17:13:47 by diego            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
-#include "render.h"
-#include "events.h"
-#include "utils.h"
+#ifndef EVENTS_H
+#define EVENTS_H
 
-int main(int ac, char **av)
-{
-    t_engine    engine;
-    if(ac != 2)
-        show_help();
-    init_engine(&engine, av[1]);
-    draw_fractal(&engine);
-    mlx_key_hook(engine.window, on_key_hook_event, &engine);
-}
+
+int on_key_hook_event(int key, t_engine *engine);
+
+
+#endif

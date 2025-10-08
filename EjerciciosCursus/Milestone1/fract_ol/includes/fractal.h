@@ -15,6 +15,7 @@
 
 #include <stdbool.h>
 #include "mlx.h"
+#include "keys.h"
 #include "libft.h"
 
 #define MANDELBROT 1
@@ -22,6 +23,7 @@
 
 #define WIN_SIZE 500
 #define MIN_ITERATIONS 265
+#define VIEW_CHANGE_SIZE 60
 #define MAX_ITERATIONS 265
 #define DEFAULT_COLOR 265
 #define MANDELBROT_STR "mandelbrot"
@@ -62,4 +64,5 @@ typedef struct s_engine
     t_image image;
     t_fractal fractal;
 } t_engine;
+
 #endif

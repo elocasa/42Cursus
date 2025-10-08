@@ -15,9 +15,9 @@
 
 #include "fractal.h"
 
-
+void    change_color(int key, t_engine *engine);
 void    set_pixel_color(t_engine *engine, int x, int y, int color);
 void    draw_fractal(t_engine *engine);
-int calc_fractal(t_fractal *fract, t_complex *c, int x, int y);
+int     calc_fractal(t_fractal *fract, t_complex *c, int x, int y);
 
 #endif

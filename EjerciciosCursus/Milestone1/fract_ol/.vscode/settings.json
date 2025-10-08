@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "utils.h": "c",
-        "render.h": "c"
+        "render.h": "c",
+        "events.h": "c"
     }
 }
