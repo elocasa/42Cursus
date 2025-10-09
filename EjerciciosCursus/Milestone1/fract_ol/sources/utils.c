@@ -55,7 +55,7 @@ void show_help()
 	print(" |----------------------- KEYBOARD ------------------------|\n", 1);
 	print(" |                                                         |\n", 1);
 	print(" | Press ESC to close the window                           |\n", 1);
-	print(" | Press one of [1-6] to move to another fractal           |\n", 1);
+	print(" | Press one of [1-5] to move to another fractal           |\n", 1);
 	print(" | Press one of [Q-Y] keys to change the color of fractal  |\n", 1);
 	print(" | Press one of [A-H] keys to change the color of fractal  |\n", 1);
 	print(" | Use mouse scroll to zoom in and out of the fractal      |\n", 1);

@@ -16,7 +16,8 @@
 # include "fractal.h"
 
 void    init_engine(t_engine *engine, char *arg);
-void    reset_engine(t_engine *engine, char *fractal_type);
+void    reset_engine(t_engine *engine, int fractal_type);
 void    set_fractal_type(t_engine *engine, char *str);
+void    change_fractal(int key, t_engine *engine);
 
 #endif

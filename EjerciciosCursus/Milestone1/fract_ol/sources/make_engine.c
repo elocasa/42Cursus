@@ -12,12 +12,6 @@
 
 #include "utils.h"
 #include "mlx.h"
-void    change_fractal(int key, t_engine *engine)
-{
-    reset_engine(engine, MANDELBROT);
-    if (key == KEY_TWO)
-        engine->fractal.type = JULIA;
-}
 
 void    set_fractal_type(t_engine *engine, char *str)
 {
@@ -27,15 +21,23 @@ void    set_fractal_type(t_engine *engine, char *str)
         return ;
     ft_strlower(str);
     len = ft_strlen(str);
-    if(ft_strncmp(str, MANDELBROT_STR, len) == 0)
+    if (ft_strncmp(str, MANDELBROT_STR, len) == 0)
         engine->fractal.type = MANDELBROT;
     else if(ft_strncmp(str, JULIA_STR, len) == 0)
         engine->fractal.type = JULIA;
+    else if (ft_strncmp(str, BURNING_SHIP_STR, len) == 0)
+        engine->fractal.type = BURNING_SHIP;
+    else if (ft_strncmp(str, TRICORN_STR, len) == 0)
+        engine->fractal.type = TRICORN;
+    else if (ft_strncmp(str, NEWTON_STR, len) == 0)
+        engine->fractal.type = NEWTON;
+    else if (ft_strncmp(str, SIERPINSKI_STR, len) == 0)
+        engine->fractal.type = SIERPINSKI;
     else
         show_help();
 }
 
-void    reset_engine(t_engine *engine, char *fractal_type)
+void    reset_engine(t_engine *engine, int fractal_type)
 {
     engine->fractal.type = fractal_type;
     engine->fractal.zoom = WIN_SIZE / 4;
@@ -46,6 +48,21 @@ void    reset_engine(t_engine *engine, char *fractal_type)
     engine->fractal.is_julia_block = false;
     engine->fractal.color = DEFAULT_COLOR;
     engine->fractal.iterations = MIN_ITERATIONS;
+}
+
+void    change_fractal(int key, t_engine *engine)
+{
+    reset_engine(engine, MANDELBROT);
+    if (key == KEY_TWO)
+        engine->fractal.type = JULIA;
+    else if (key == KEY_THREE)
+        engine->fractal.type = BURNING_SHIP;
+    else if (key == KEY_FOUR)
+        engine->fractal.type = TRICORN;
+    else if (key == KEY_FIVE)
+        engine->fractal.type = NEWTON;
+    else if (key == KEY_SIX)
+        engine->fractal.type = SIERPINSKI;
 }
 
 void    init_engine(t_engine *engine, char *arg)

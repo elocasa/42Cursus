@@ -18,6 +18,6 @@
 
 void    error_message(char *text, int mode);
 void    ft_strlower(char *str);
-void    error_message(char *text, int mode);
+void    show_help();
 
 #endif
