@@ -3,8 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diego <diego@student.42.fr>                #+#  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*   By: diego <diego@student.42.fr>                #+#    #+#             */
 /*   Created: 2025-10-08 17:15:20 by diego             #+#    #+#             */
 /*   Updated: 2025-10-08 17:15:20 by diego            ###   ########.fr       */
 /*                                                                            */
@@ -28,7 +27,7 @@ int on_mouse_hook_event(int key, int x, int y, t_engine *engine)
 
     fr = &engine->fractal;
 
-    if(key == MOUSE_SCRL_DOWN)
+    if(key == MOUSE_SCRL_UP)
     {
         fr->offset_x = (x / fr->zoom + fr->offset_x) - (x / (fr->zoom * 1.3));
         fr->offset_y = (y / fr->zoom + fr->offset_y) - (y / (fr->zoom * 1.3));
@@ -36,7 +35,7 @@ int on_mouse_hook_event(int key, int x, int y, t_engine *engine)
         if(fr->iterations < MAX_ITERATIONS)
             ++fr->iterations;
     }
-    else if(key == MOUSE_SCRL_UP)
+    else if(key == MOUSE_SCRL_DOWN)
     {
         fr->offset_x = (x / fr->zoom + fr->offset_x) - (x / (fr->zoom / 1.3));
         fr->offset_y = (y / fr->zoom + fr->offset_y) - (y / (fr->zoom / 1.3));

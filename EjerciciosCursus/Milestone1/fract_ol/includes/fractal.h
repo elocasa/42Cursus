@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractal.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diego <diego@student.42.fr>                #+#  +:+       +#+        */
+/*   By: diego <diego@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-08 14:16:23 by diego             #+#    #+#             */
-/*   Updated: 2025-10-08 14:16:23 by diego            ###   ########.fr       */
+/*   Created: 2025/10/08 14:16:23 by diego             #+#    #+#             */
+/*   Updated: 2025/10/10 00:10:27 by diego            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@
 #define NEWTON_STR "newton"
 #define SIERPINSKI_STR "sierpinski"
 
-#define WIN_SIZE 1000
+#define WIN_SIZE 700
 #define VIEW_CHANGE_SIZE 60
-#define MIN_ITERATIONS 265
-#define MAX_ITERATIONS 265
+#define MIN_ITERATIONS 90000
+#define MAX_ITERATIONS 90000
 #define DEFAULT_COLOR 265
 
 
@@ -74,7 +74,9 @@ typedef struct s_engine
     void *window;
     t_image image;
     t_fractal fractal;
+    bool show_help; // Nuevo estado para mostrar la pantalla de ayuda
 } t_engine;
+
 
 int calc_julia(t_fractal *fract, t_complex *c, int x, int y);
 int calc_mandelbrot(t_fractal *fract, t_complex *c);
@@ -82,5 +84,6 @@ int calc_burning_ship(t_fractal *fract, t_complex *c);
 int calc_tricorn(t_fractal *fract, t_complex *c);
 int	calc_newton(t_fractal *fract, t_complex *c);
 int	calc_sierpinski(t_fractal *fract, t_complex *c);
+int calc_barnsley_fern(t_fractal *fract, t_complex *c);
 
 #endif

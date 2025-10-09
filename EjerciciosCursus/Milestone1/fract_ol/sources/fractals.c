@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractals.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diego <diego@student.42.fr>                #+#  +:+       +#+        */
+/*   By: diego <diego@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-09 14:38:43 by diego             #+#    #+#             */
-/*   Updated: 2025-10-09 14:38:43 by diego            ###   ########.fr       */
+/*   Created: 2025/10/09 14:38:43 by diego             #+#    #+#             */
+/*   Updated: 2025/10/10 00:00:59 by diego            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,22 @@ int calc_mandelbrot(t_fractal *fract, t_complex *c)
 
 int	calc_julia(t_fractal *fract, t_complex *c, int x, int y)
 {
-	double		re_temp;
-	t_complex	z;
-	int			i;
+	double	re, im, re2, im2;
+	int		i;
 
-	i = -1;
-	z.re = (x / fract->zoom) + fract->offset_x;
-	z.im = (y / fract->zoom) + fract->offset_y;
-	while ((z.re * z.re + z.im * z.im) < 4 && ++i < fract->iterations)
+	re = x / fract->zoom + fract->offset_x;
+	im = y / fract->zoom + fract->offset_y;
+
+	i = 0;
+	while (i < fract->iterations)
 	{
-		re_temp = z.re * z.re - z.im * z.im + c->re;
-		z.im = 2 * z.re * z.im + c->im;
-		z.re = re_temp;
+		re2 = re * re;
+		im2 = im * im;
+		if (re2 + im2 > 4.0)
+			break;
+		im = 2.0 * re * im + c->im;
+		re = re2 - im2 + c->re;
+		i++;
 	}
 	return (i);
 }
@@ -67,6 +71,7 @@ int calc_burning_ship(t_fractal *fract, t_complex *c)
 	}
 	return (i);
 }
+
 
 int	calc_newton(t_fractal *fract, t_complex *c)
 {
@@ -146,5 +151,6 @@ int	calc_sierpinski(t_fractal *fract, t_complex *c)
 	}
 	return (i);
 }
+
 
 
