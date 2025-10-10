@@ -133,16 +133,14 @@ int	calc_sierpinski(t_fractal *fract, t_complex *c)
 	int	x;
 	int	y;
 	int	i = 0;
-	double	scale = 100.0;  // Factor de escala: ajusta el tamaño del patrón
+	double	scale = 100.0;
 
 	x = (int)(c->re * scale);
 	y = (int)(c->im * scale);
 
-	// Aseguramos que sean positivos para evitar problemas con números negativos
 	x = abs(x);
 	y = abs(y);
 
-	// Usamos bitwise AND para decidir si está en una zona "vacía"
 	while ((x & y) == 0 && i < fract->iterations)
 	{
 		x >>= 1;
