@@ -35,9 +35,10 @@
 
 #define WIN_SIZE 700
 #define VIEW_CHANGE_SIZE 60
-#define MIN_ITERATIONS 256
-#define MAX_ITERATIONS 256
-#define DEFAULT_COLOR 265
+#define MIN_ITERATIONS 700
+#define MAX_ITERATIONS 700
+#define DEFAULT_COLOR 150
+#define DEFAULT_COLOR2 10
 
 
 typedef struct s_complex
@@ -74,7 +75,7 @@ typedef struct s_engine
     void *window;
     t_image image;
     t_fractal fractal;
-    bool show_help; // Nuevo estado para mostrar la pantalla de ayuda
+    bool show_help;
 } t_engine;
 
 
@@ -84,6 +85,5 @@ int calc_burning_ship(t_fractal *fract, t_complex *c);
 int calc_tricorn(t_fractal *fract, t_complex *c);
 int	calc_newton(t_fractal *fract, t_complex *c);
 int	calc_sierpinski(t_fractal *fract, t_complex *c);
-int calc_barnsley_fern(t_fractal *fract, t_complex *c);
 
 #endif
