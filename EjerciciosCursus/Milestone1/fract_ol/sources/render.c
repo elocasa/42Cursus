@@ -100,10 +100,10 @@ void    draw_fractal(t_engine *engine)
     int                 iter;
     int                 x;
     int                 y;
-    int                h;
+    // int                h;
 
     x = -1;
-    h = 1;
+    // h = 1;
     fract = &engine->fractal;
     mlx_clear_window(engine->mlx, engine->window);
     while (++x < WIN_SIZE)
@@ -116,17 +116,17 @@ void    draw_fractal(t_engine *engine)
         while (++y < WIN_SIZE)
         {
             iter = calc_fractal(fract, &c, x, y);
-            if (h > 0)
-            {
-                engine->fractal.color = DEFAULT_COLOR;
+            // if (h > 0)
+            // {
+            //     engine->fractal.color = DEFAULT_COLOR;
                 set_pixel_color(engine, x, y, (iter * engine->fractal.color));
-            }   
-            else
-            {
-                engine->fractal.color = DEFAULT_COLOR2;
-                set_pixel_color(engine, x, y, ((iter + 10) * engine->fractal.color));
-            }
-            h = h*-1;
+            // }   
+            // else
+            // {
+            //     engine->fractal.color = DEFAULT_COLOR2;
+            //     set_pixel_color(engine, x, y, ((iter + 10) * engine->fractal.color));
+            // }
+            // h = h*-1;
         }
     }
     mlx_put_image_to_window(engine->mlx, engine->window, \

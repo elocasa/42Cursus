@@ -33,12 +33,12 @@
 #define NEWTON_STR "newton"
 #define SIERPINSKI_STR "sierpinski"
 
-#define WIN_SIZE 700
-#define VIEW_CHANGE_SIZE 60
+#define WIN_SIZE 500
+#define VIEW_CHANGE_SIZE 50
 #define MIN_ITERATIONS 700
 #define MAX_ITERATIONS 700
-#define DEFAULT_COLOR 150
-#define DEFAULT_COLOR2 10
+#define DEFAULT_COLOR 100
+#define DEFAULT_COLOR2 200
 
 
 typedef struct s_complex

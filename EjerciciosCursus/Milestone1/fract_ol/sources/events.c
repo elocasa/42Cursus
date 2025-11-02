@@ -18,6 +18,7 @@ int on_destroy_event(t_engine *engine)
 {
     mlx_destroy_image(engine->mlx, engine->image.img_ptr);
     mlx_destroy_window(engine->mlx, engine->window);
+    mlx_destroy_display(engine->mlx);
     exit(EXIT_SUCCESS);
 }
 
