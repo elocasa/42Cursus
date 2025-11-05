@@ -39,6 +39,7 @@ MY_SOURCE = \
 	ft_substr.c \
 	ft_tolower.c \
 	ft_toupper.c \
+	ft_isnum.c \
 
 $(NAME): $(MY_OBJECTS)
 

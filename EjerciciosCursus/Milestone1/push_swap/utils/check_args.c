@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diego <diego@student.42.fr>                #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-15 11:19:41 by diego             #+#    #+#             */
-/*   Updated: 2025-10-15 11:19:41 by diego            ###   ########.fr       */
+/*   Created: 2025-10-27 13:03:24 by diego             #+#    #+#             */
+/*   Updated: 2025-10-27 13:03:24 by diego            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void init_stack(t_list **stack, int ac, char **av)
+static int	ft_contains(int num, char **argv, int i)
 {
-    t_list  *news; //pongo news en lugar de new por que me da error
-    char    **args;
-    int     i;
+	i++;
+	while (argv[i])
+	{
+		if (ft_atoi(argv[i]) == num)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
-    i = 0;
+void    ft_checkarg(int ac, char **av)
+{
+    int     i;
+    long    temp;
+    char    **args;
+
     if(ac == 2)
         args = ft_split(av[1], ' ');
     else
@@ -28,24 +39,15 @@ static void init_stack(t_list **stack, int ac, char **av)
     }
     while(args[i])
     {
-        news = ft_lstnews(ft_atoi(args[i]));
-        ft_lstadd_back(stack, news);
+        temp = ft_atoi(args[i]);
+        if(!ft_isnum(args[i]));
+            ft_error("ERROR");
+        if(ft_contains(temp, args, i))
+            ft_error("ERROR");
+        if(temp < -2147483648 || temp > 2147483647)
+            ft_error("ERROR");
         i++;
     }
-    index_stack(stack);
-}
-
-int main(int ac, char **av)
-{
-    t_list  **stack_a;
-    t_list  **stack_b;
-
-    if(ac<2)
-        return (-1);
-    ft_checkarg(ac, av);
-    stack_a = (t_list **)malloc(sizeof(t_list));
-    stack_b = (t_list **)malloc(sizeof(t_list));
-    *stack_a = NULL;
-    *stack_b = NULL;
-    init_stack(stack_a, ac, av);
+    if (ac == 2)
+        ft_free(args);
 }

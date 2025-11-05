@@ -71,16 +71,16 @@ int push(t_list **stack_dest, t_list **stack_org)
     head_org = *stack_org;
     tmp = head_org;
     *stack_org = head_org;
-    if(!head_dest) // si el destino esta vacio
+    if(!head_dest) //If dest is empty
     {
-        head_dest = tmp; // el nodo que muevo se convierte en el unico y primero del dest
-        head_dest->next = NULL; // el next lo hacemos NULL ya que no hay mas
+        head_dest = tmp; // the node I move becomes the only and first node in the destination
+        head_dest->next = NULL; // NEXT is set NUll bcs there's nothing more
         *stack_dest = head_dest;
     }
-    else // sino esta vacío
+    else // And if it's not empty
     {
-        tmp->next = head_dest; // el nodo que se ha movido lo ponemos antes del primer nodo actual
-        *stack_dest = tmp; // se updatea el dest para que comience desde el nodo que hemos metido
+        tmp->next = head_dest; // it puts the node wich has been moved before the actual node
+        *stack_dest = tmp; 
     }
     return (0);
 }
@@ -115,3 +115,79 @@ int rotate(t_list **stack)
     tail->next = head;
     return (0);
 }
+
+int ra(t_list **stack_a)
+{
+    if(rotate(stack_a) == -1)
+        return (-1);
+    ft_putendl_fd("ra", 1);
+    return (0);
+}
+
+int rb(t_list **stack_b)
+{
+    if(rotate(stack_b) == -1)
+        return (-1);
+    ft_putendl_fd("rb", 1);
+    return (0);
+}
+
+int rr(t_list **stack_a, t_list **stack_b)
+{
+    if((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+        return (-1);
+    rotate(stack_a);
+    rotate(stack_b);
+    ft_putendl_fd("rr", 1);
+    return (0);
+}
+
+int reverse_rotate(t_list **stack)
+{
+    t_list *head;
+    t_list *tail;
+
+    if(ft_lstsize(*stack) < 2)
+        return (-1);
+    head = *stack;
+    tail = ft_lstlast(head);
+    while(head)
+    {
+        if (head->next->next == NULL)
+        {
+            head->next = NULL;
+            break;
+        }
+        head = head->next;
+    }
+    tail->next = *stack;
+    *stack = tail;
+    return (0);
+}
+
+int rra(t_list **stack_a)
+{
+    if(reverse_rotate(stack_a) == -1)
+        return (-1);
+    ft_putendl_fd("rra", 1);
+    return (0);
+}
+
+int rrb(t_list **stack_b)
+{
+    if(reverse_rotate(stack_b) == -1)
+        return(-1);
+    ft_putendl_fd("rrb", 1);
+    return (0);
+}
+
+int rrr(t_list **stack_a, t_list **stack_b)
+{
+    if((ft_lstsize(stack_a) < 2) || (ft_lstsize(stack_b) < 2))
+        return (-1);
+    reverse_rotate(stack_a);
+    reverse_rotate(stack_b);
+    ft_putendl_fd("rrr", 1);
+    return (0);
+}
+
