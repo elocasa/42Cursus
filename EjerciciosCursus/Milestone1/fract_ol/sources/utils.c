@@ -11,57 +11,78 @@
 /* ************************************************************************** */
 
 #include "utils.h"
+#include <ctype.h>
+#include <errno.h>
+#include <stdlib.h>
+#include <string.h>
 
-
-void    error_message(char *text, int mode)
+void	ft_strlower(char *str)
 {
-    if(mode == 0)
-        perror(text);
-    else if(text)
-        ft_putstr_fd(text, 2);
-    exit(EXIT_FAILURE);
+	int	i;
+
+	if (!str)
+		return ;
+	i = -1;
+	while (str[i++])
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+	}
 }
 
-void    ft_strlower(char *str)
+static int	parse_double(const char **sp, double *val)
 {
-    int i;
+	char	*end;
 
-    if(!str)
-        return ;
-    i = -1;
-    while(str[i++])
-    {
-        if(str[i] >= 'A' && str[i] <= 'Z')
-            str[i] +=32;
-    }
+	if (!sp || !*sp || !val)
+		return (-1);
+	errno = 0;
+	*val = strtod(*sp, &end);
+	if (end == *sp)
+		return (-1);
+	*sp = end;
+	return (0);
 }
 
-void    print(char *str, int fd)
+int	parse_complex_arg(const char *s, double *re, double *im)
 {
-    ft_putstr_fd(str, fd);
+	const char	*p;
+	double		r;
+	double		imv;
+
+	if (!s || !re || !im)
+		return (-1);
+	p = s;
+	if (parse_double(&p, &r) == -1)
+		return (-1);
+	while (*p && isspace((unsigned char)*p))
+		p++;
+	if (*p++ != ',')
+		return (-1);
+	while (*p && isspace((unsigned char)*p))
+		p++;
+	if (parse_double(&p, &imv) == -1)
+		return (-1);
+	while (*p && isspace((unsigned char)*p))
+		p++;
+	if (*p != '\0')
+		return (-1);
+	*re = r;
+	*im = imv;
+	return (0);
 }
 
-void show_help()
+void	set_julia_defaults(t_fractal *fract, int preset)
 {
-    print("\n", 1);
-	print(" +------------------ Let me help you! ---------------------+\n", 1);
-	print(" |                                                         |\n", 1);
-	print(" | Usage: ./fractol [mandelbrot / julia / burning_ship     |\n", 1);
-	print(" |                   tricorn / newton / sierpinski]        |\n", 1);
-	print(" |                                                         |\n", 1);
-	print(" | e.g: ./fractol mandelbrot                               |\n", 1);
-	print(" |                                                         |\n", 1);
-	print(" |----------------------- KEYBOARD ------------------------|\n", 1);
-	print(" |                                                         |\n", 1);
-	print(" | Press ESC to close the window                           |\n", 1);
-	print(" | Press one of [1-6] to move to another fractal           |\n", 1);
-	print(" | Press one of [Q-Y] keys to change the color of fractal  |\n", 1);
-	print(" | Press one of [A-H] keys to change the color of fractal  |\n", 1);
-	print(" | Use mouse scroll to zoom in and out of the fractal      |\n", 1);
-	print(" | Press the arrow keys to change the viewpoint            |\n", 1);
-	print(" | Press L to lock Julia's fractal                         |\n", 1);
-	print(" | Press Zero to reset the fractal                         |\n", 1);
-	print(" +---------------------------------------------------------+\n", 1);
-	print("\n", 1);
-	exit(EXIT_SUCCESS);
+	(void)preset;
+	if (!fract)
+		return ;
+	fract->julia_param.re = -0.7;
+	fract->julia_param.im = 0.27015;
+	fract->zoom = WIN_SIZE / 4;
+	fract->offset_x = -2;
+	fract->offset_y = -2;
+	fract->iterations = MIN_ITERATIONS;
+	fract->color = DEFAULT_COLOR;
+	fract->is_julia_block = true;
 }

@@ -13,12 +13,14 @@
 #ifndef UTILS_H
 # define UTILS_H
 
-#include "fractal.h"
-#include <stdio.h>
+# include "fractal.h"
+# include <stdio.h>
 
-void    error_message(char *text, int mode);
-void    ft_strlower(char *str);
-void    show_help();
-void draw_help_screen(t_engine *engine);
+void	error_message(char *text, int mode);
+void	ft_strlower(char *str);
+void	show_help(void);
+void	draw_help_screen(t_engine *engine);
+int		parse_complex_arg(const char *s, double *re, double *im);
+void	set_julia_defaults(t_fractal *fract, int preset);
 
 #endif

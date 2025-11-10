@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 #ifndef KEYS_H
-#define KEYS_H
+# define KEYS_H
 
-#ifdef __linux__
+# ifdef __linux__
 
-enum e_keys
+enum	e_keys
 {
-    KEY_ESC = 65307,
+	KEY_ESC = 65307,
 	KEY_UP = 65362,
 	KEY_DOWN = 65364,
 	KEY_RIGHT = 65363,
@@ -29,7 +29,7 @@ enum e_keys
 	KEY_FOUR = 52,
 	KEY_FIVE = 53,
 	KEY_SIX = 54,
-	//KEY_SEVEN = 55,
+	// KEY_SEVEN = 55,
 	KEY_Q = 113,
 	KEY_W = 119,
 	KEY_E = 101,
@@ -52,7 +52,7 @@ enum e_keys
 
 # else
 
-enum e_keys
+enum	e_keys
 {
 	KEY_ESC = 53,
 	KEY_UP = 126,
@@ -85,6 +85,6 @@ enum e_keys
 	MOUSE_SCRL_DOWN = 4,
 	MOUSE_SCRL_UP = 5,
 };
-#endif
+# endif
 
 #endif

@@ -39,6 +39,7 @@ SRC_FILES		= main.c \
 				  render.c \
 			 	  fractals.c \
 				  make_engine.c \
+				  extra.c \
 
 SRCS			= $(addprefix $(SRCS_DIR), $(SRC_FILES))
 
