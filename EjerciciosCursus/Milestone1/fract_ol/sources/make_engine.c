@@ -82,13 +82,7 @@ void	init_engine(t_engine *engine, char *arg)
 	engine->window = mlx_new_window(engine->mlx, WIN_SIZE, WIN_SIZE,
 			">Fractol Project<");
 	engine->image.img_ptr = mlx_new_image(engine->mlx, WIN_SIZE, WIN_SIZE);
-	if (!engine->window || !engine->image.img_ptr)
-	{
-		mlx_destroy_image(engine, engine->image.img_ptr);
-		mlx_destroy_window(engine, engine->window);
-		mlx_destroy_display(engine->mlx);
-		error_message("[FATAL MLX ERROR]: can't handle object creation!\n", 1);
-	}
+	engine_error(engine);
 	engine->image.addr_ptr = mlx_get_data_addr(engine->image.img_ptr,
 			&pixel_bits, &line_len, &endian);
 	engine->image.pixel_bits = pixel_bits;

@@ -3,6 +3,7 @@
         "utils.h": "c",
         "render.h": "c",
         "events.h": "c",
-        "fractal.h": "c"
+        "fractal.h": "c",
+        "mlx.h": "c"
     }
 }

@@ -71,3 +71,14 @@ void	show_julia_error(int num)
 		ft_putendl_fd("Invalid Julia parameters, use (re,im)\n", 2);
 	show_help();
 }
+
+void	engine_error(t_engine *engine)
+{
+	if (!engine->window || !engine->image.img_ptr)
+	{
+		mlx_destroy_image(engine, engine->image.img_ptr);
+		mlx_destroy_window(engine, engine->window);
+		mlx_destroy_display(engine->mlx);
+		error_message("[FATAL MLX ERROR]: can't handle object creation!\n", 1);
+	}
+}

@@ -90,5 +90,6 @@ void			error_message(char *text, int mode);
 void			show_help(void);
 void			change_color(int key, t_engine *engine);
 void			show_julia_error(int num);
+void			engine_error(t_engine *engine);
 
 #endif
