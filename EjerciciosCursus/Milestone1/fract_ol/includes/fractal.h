@@ -34,7 +34,7 @@
 # define NEWTON_STR "newton"
 # define SIERPINSKI_STR "sierpinski"
 
-# define WIN_SIZE 500
+# define WIN_SIZE 1000
 # define VIEW_CHANGE_SIZE 50
 # define MIN_ITERATIONS 700
 # define MAX_ITERATIONS 700

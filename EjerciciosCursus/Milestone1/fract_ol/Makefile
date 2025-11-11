@@ -48,7 +48,22 @@ OBJS_DIR		= objs/
 OBJ_FILES		= $(SRC_FILES:.c=.o)
 OBJS			= $(addprefix $(OBJS_DIR), $(OBJ_FILES))
 
-# Platform-dependent compilation
+# Sources Bonus
+SRC_DIR_BONUS		= sources_bonus/
+SRC_FILES_BONUS		= main_bonus.c \
+				  	  utils_bonus.c \
+				  	  events_bonus.c \
+				  	  render_bonus.c \
+			 	  	  fractals_bonus.c \
+				  	  make_engine_bonus.c \
+				  	  extra_bonus.c \
+
+# Objects Bonus
+OBJS_DIR_BONUS		= objs_bonus/
+OBJ_FILES_BONUS		= $(SRC_FILES_BONUS:.c=.o)
+OBJS_BONUS			= $(addprefix $(OBJS_DIR_BONUS), $(OBJ_FILES_BONUS))
+
+# Platform-dependent libraries
 ifeq ($(OS), Linux)
 	MLX_DIR			= minilibx-linux
 	MLX				= $(MLX_DIR)/libmlx.a
@@ -85,16 +100,36 @@ $(NAME) : $(OBJS) Makefile
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.c $(INCLUDES)
 	@$(CC) $(CFLAGS) $(INCLUDES_FLAG) -c $< -o $@
 
+
+# Bonus
+
+NAME_BONUS	:= $(NAME)_bonus
+
+bonus : $(LIBFT) $(MLX) $(OBJS_DIR_BONUS) $(OBJS_BONUS)
+	@echo $(GREEN) " - Compiling $(NAME) with bonus..." $(RESET)
+	@$(CC) $(CFLAGS) $(OBJS_BONUS) $(LINKER) -o $(NAME)
+	@echo $(YELLOW) " - Compiling FINISHED" $(RESET)
+
+$(OBJS_DIR_BONUS) :
+	@$(MKDIR) $(OBJS_DIR_BONUS)
+
+$(OBJS_DIR_BONUS)%.o : $(SRC_DIR_BONUS)%.c $(INCLUDES)
+	@$(CC) $(CFLAGS) $(INCLUDES_FLAG) -c $< -o $@
+
 clean :
 	@$(RM) $(OBJS_DIR)
+	@$(RM) $(OBJS_DIR_BONUS)
 	@echo $(RED) " - Cleaned!" $(RESET)
 
 fclean : clean
 	@$(RM) $(NAME)
+	@$(RM) $(NAME_BONUS)
 	@$(MAKE) $(MLX_DIR) clean
 	@$(MAKE) $(LIBFT_DIR) fclean
 	@echo $(RED) " - Full Cleaned!" $(RESET)
 
 re: fclean all
+
+
 
 .PHONY: all clean fclean re

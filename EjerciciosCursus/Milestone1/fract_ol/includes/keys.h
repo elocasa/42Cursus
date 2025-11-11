@@ -28,8 +28,8 @@ enum	e_keys
 	KEY_THREE = 51,
 	KEY_FOUR = 52,
 	KEY_FIVE = 53,
-	KEY_SIX = 54,
-	// KEY_SEVEN = 55,
+	// KEY_SIX = 54,
+	// KEY_SEVEN = 55
 	KEY_Q = 113,
 	KEY_W = 119,
 	KEY_E = 101,
@@ -65,7 +65,6 @@ enum	e_keys
 	KEY_THREE = 20,
 	KEY_FOUR = 21,
 	KEY_FIVE = 23,
-	KEY_SIX = 22,
 	KEY_Q = 12,
 	KEY_W = 13,
 	KEY_E = 14,
@@ -85,6 +84,7 @@ enum	e_keys
 	MOUSE_SCRL_DOWN = 4,
 	MOUSE_SCRL_UP = 5,
 };
+
 # endif
 
 #endif
