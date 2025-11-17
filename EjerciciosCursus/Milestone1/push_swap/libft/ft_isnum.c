@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_isnum(char *num)
+int	ft_isnum(char *num)
 {
 	int	i;
 
